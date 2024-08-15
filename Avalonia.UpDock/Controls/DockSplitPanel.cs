@@ -32,8 +32,8 @@ namespace Avalonia.UpDock.Controls
             {
                 var line = new Line()
                 {
-                    Stroke = Brushes.Gray,
-                    StrokeThickness = 4
+                    Stroke = Brushes.Black,
+                    StrokeThickness = 2
                 };
                 _splitLines.Add(line);
                 VisualChildren.Add(line);
