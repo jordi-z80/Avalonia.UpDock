@@ -31,8 +31,10 @@ public partial class DockingHost : DockSplitPanel
         DockIndicatorFieldStrokeProperty.GetDefaultValue(typeof(DockingTabControl)),
         DockIndicatorFieldStrokeThicknessProperty.GetDefaultValue(typeof(DockingTabControl)));
 
-    #region Properties
-    public static StyledProperty<double> DockIndicatorFieldSizeProperty { get; private set; } =
+	#region Properties
+	#pragma warning disable AVP1000
+
+	public static StyledProperty<double> DockIndicatorFieldSizeProperty { get; private set; } =
         AvaloniaProperty.Register<DockingTabControl, double>(nameof(DockIndicatorFieldSize), 40);
 
     public static StyledProperty<double> DockIndicatorFieldSpacingProperty { get; private set; } =
