@@ -138,7 +138,10 @@ internal class DockingOverlayWindow : Window
         void DrawDockControl(Rect rect, (double l, double r) lrPercent, (double t, double b) tbPercent,
                 bool isHovered, float cornerRadius, bool isNeighborDock = false)
         {
-            static double Lerp(double a, double b, double t) => (1 - t) * a + t * b;
+			// instead of fixing the offset bug, we render it a bit higher (because I have no idea where the bug is)
+			rect = new Rect (rect.TopLeft + new Point (0, -25), rect.BottomRight + new Point (0, -25));
+
+			static double Lerp(double a, double b, double t) => (1 - t) * a + t * b;
             var l = Lerp(rect.Left, rect.Right, lrPercent.l);
             var r = Lerp(rect.Left, rect.Right, lrPercent.r);
             var t = Lerp(rect.Top, rect.Bottom, tbPercent.t);
